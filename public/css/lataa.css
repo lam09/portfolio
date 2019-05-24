@@ -1,0 +1,24 @@
+.portfolio-item{
+    transition: all .2s ease-in-out !important;
+}
+.portfolio-item:hover{
+    transform: scale(1.1);
+}
+.bg-primary{
+    background-color: black !important
+}
+.btn-primary {
+    background-color: black !important
+}
+.bg-secondary{
+    background-color: aliceblue !important
+}
+#mainNav .navbar-nav li.nav-item a.nav-link{
+    color: black !important
+}
+
+.portfolio-language-title{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: blue;
+}
