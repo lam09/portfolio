@@ -22,3 +22,62 @@
     margin-bottom: 2%;
     color: blue;
 }
+.name-character{
+    position: relative !important;
+    margin: 5px;
+    /* -webkit-animation: mymove 5s infinite; Safari 4.0 - 8.0 */
+    animation-delay: attr(animation-time-delay);
+    animation: moveUpDown 4s infinite;
+}
+/* Safari 4.0 - 8.0 */
+/* @-webkit-keyframes mymove {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    75%  {top: 50px}
+    100% {top: 100px;}
+  } */
+  
+/* Standard syntax */
+@keyframes moveUpDown {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    65%  {top: -50px}
+    85%  {top: 50px}    
+    100% {top: 0px;}
+  }
+
+.fadeInLeftBig {
+    -webkit-animation-name: fadeInLeftBig;
+    animation-name: fadeInLeftBig;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s inherit;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeInLeftBig {
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    transform: translate3d(-2000px, 0, 0);
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    }
+    }
+    @keyframes fadeInLeftBig {
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    transform: translate3d(-2000px, 0, 0);
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    }
+    }
+
+
+   

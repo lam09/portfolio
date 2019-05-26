@@ -52,7 +52,45 @@
 
    
       <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Lam Tuan Anh</h1>
+      <div class="row fadeInLeftBig">
+      <div class="name-character" style="animation-delay:1s">
+        <h1 class="masthead-heading text-uppercase mb-0">L</h1>
+      </div>
+      <div class="name-character" style="animation-delay:2s">
+        <h1 class="masthead-heading text-uppercase mb-0">A</h1>
+      </div>
+      <div class="name-character" style="animation-delay:0s">
+        <h1 class="masthead-heading text-uppercase mb-0">M</h1>
+      </div>
+      <div class="name-character" style="animation-delay:1.3s">
+        <h1 class="masthead-heading text-uppercase mb-0">&nbsp;</h1>
+      </div>
+      <div class="name-character" style="animation-delay:1.6s">
+        <h1 class="masthead-heading text-uppercase mb-0">T</h1>
+      </div>
+      <div class="name-character" style="animation-delay:1.5s">
+        <h1 class="masthead-heading text-uppercase mb-0">U</h1>
+      </div>
+      <div class="name-character" style="animation-delay:1.9s">
+        <h1 class="masthead-heading text-uppercase mb-0">A</h1>
+      </div>
+      <div class="name-character" style="animation-delay:0s">
+        <h1 class="masthead-heading text-uppercase mb-0">N</h1>
+      </div>
+      <div class="name-character" style="animation-delay:2s">
+        <h1 class="masthead-heading text-uppercase mb-0">&nbsp;</h1>
+      </div>
+      <div class="name-character" style="animation-delay:0.7s">
+        <h1 class="masthead-heading text-uppercase mb-0">A</h1>
+      </div>
+      <div class="name-character" style="animation-delay:0.5s">
+        <h1 class="masthead-heading text-uppercase mb-0">N</h1>
+      </div>
+      <div class="name-character" style="animation-delay:1.5s">
+        <h1 class="masthead-heading text-uppercase mb-0">H</h1>
+      </div>
+
+    </div>
 
       <!-- Icon Divider -->
       <div class="divider-custom divider-light">
@@ -139,7 +177,11 @@
       </div>
     </div>
   </section>
+ 
+  <!-- Write me -->
+  <section class="page-section" id="commentApp">
 
+  </section>
   <!-- Contact Section -->
   <section class="page-section" id="contact">
     <div class="container">
@@ -296,7 +338,19 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
-
+  <script>
+    $(document).ready(function(){
+     /* $("#myBtn").click(function(){
+        $("#myModal").modal("show");
+      });*/
+    $("#portfolioModal1").on('show.bs.modal', function(){
+      document.getElementById('crystal').src = "http://localhost:3000/game/crystal";
+  });
+  $("#portfolioModal1").on('hide.bs.modal', function(){
+    document.getElementById('crystal').src = "about:blank";
+  });
+});
+  </script>
 </body>
 
 </html>
