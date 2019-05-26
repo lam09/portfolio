@@ -14,6 +14,22 @@ class CommentApp extends Component {
     this.onNewCommentSummit = this.onNewCommentSummit.bind(this);
   }
 
+  componentDidMount() {
+    // loading
+    this.setState({ loading: true });
+
+    // get all the comments
+    fetch("http://localhost:12002/all")
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          comments: res,
+        });
+      })
+      .catch(err => {
+        this.setState({});
+      });
+  }
   onNameChanged(e) {
     let input_name = e.target.value;
     var state = {
@@ -29,8 +45,8 @@ class CommentApp extends Component {
       comment: input_comment,
       name: this.state.name,
       comments: this.state.comments
-    }
-    this.setState(state);
+    };
+    this.setState(state);  
   };
   onNewCommentSummit() {
     var comment = {};
@@ -43,6 +59,13 @@ class CommentApp extends Component {
       comment: "",
       comments: commentList
     };
+    fetch("http://localhost:12002/add", {
+      method: "post",
+      body: {comment}
+    }).then((res)=>{res.json();}).
+    then((res)=>{
+      console.log(res);
+    });
     this.setState(state);
   };
   render() {
