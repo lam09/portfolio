@@ -428,6 +428,7 @@
         document.getElementById('crystal').src = "about:blank";
       });
 
+      // change server api
       $('#sendMessageButton').on('click', function () {
         var email = {};
         email.name = $('#inputname').val();
@@ -442,6 +443,7 @@
           success: () => { alert("Thank you for email"); }
         })
       });
+ 
 
     });
   </script>
