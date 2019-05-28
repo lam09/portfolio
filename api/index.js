@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 const https = require('https');
+const http = require('http');
 const fs = require('fs');
 
 let bodyParser = require('body-parser');
@@ -39,11 +40,16 @@ app.post('/add', function(req, res) {
 app.post('/sendmail',function(req,res){
   Email.sendMail(req,res);
 });
-https.createServer({
-  key: fs.readFileSync('./sslkey/key.pem'),
-  cert: fs.readFileSync('./sslkey/cert.pem'),
-  passphrase: 'lataa.sk'
-}, app).listen(port);
-console.log("Listening on port " + port);
 
+const sslkey =  fs.readFileSync('./sslkey/key.pem');
+const certificate =  fs.readFileSync('./sslkey/cert.pem');
+const httpsServer = https.createServer({
+  key: sslkey,
+  cert: certificate,
+  passphrase: 'lataa.sk'
+}, app);
+
+httpsServer.listen(port, () => {
+	console.log('HTTPS Server running on port '+port);
+});
 module.exports = app; // for testing
