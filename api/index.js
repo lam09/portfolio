@@ -1,9 +1,13 @@
 let express = require('express');
 let app = express();
+const https = require('https');
+
 let bodyParser = require('body-parser');
 let port = process.env.PORT || 12002;
 let comment = require('./comment');
 let Email = require('./Email');
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -34,7 +38,11 @@ app.post('/add', function(req, res) {
 app.post('/sendmail',function(req,res){
   Email.sendMail(req,res);
 });
-app.listen(port);
+https.createServer({
+  key: fs.readFileSync('./sslkey/key.pem'),
+  cert: fs.readFileSync('./sslkey/cert.pem'),
+  passphrase: 'lataa.sk'
+}, app).listen(port);
 console.log("Listening on port " + port);
 
 module.exports = app; // for testing
