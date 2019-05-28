@@ -3,6 +3,7 @@ let app = express();
 let bodyParser = require('body-parser');
 let port = process.env.PORT || 12002;
 let comment = require('./comment');
+let Email = require('./Email');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,7 +18,8 @@ app.use(function(req, res, next) {
 
 app.get('/all', function(req, res) {
     comment.find({}, function(err, comments) {
-      res.send(comments);  
+      
+      res.send(comments.reverse());  
     });
   });
 app.post('/add', function(req, res) {
@@ -29,6 +31,9 @@ app.post('/add', function(req, res) {
         res.send(com);
     });
   });
+app.post('/sendmail',function(req,res){
+  Email.sendMail(req,res);
+});
 app.listen(port);
 console.log("Listening on port " + port);
 
