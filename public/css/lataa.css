@@ -102,7 +102,7 @@
         padding-top: 2%;
     }
     .left {
-		width: 920px !important;
+		width: 80% !important;
 		padding-bottom: 40px;
 		min-height: auto !important;
 		padding-right: 0;
@@ -166,7 +166,9 @@
 	}
 
     .comment-box .name-box{
+        padding-left: 3%;
         border: green;
+        color: blue;
     }
     .comment-box .comment-text{
         padding-left: 5%;

@@ -115,10 +115,10 @@ class Comment extends Component {
   render() {
     return (
       <div className="tip left">
-        <div className="name-box">
+        <div className="row name-box">
           <h5 className="name">{this.props.comment.name} </h5>
         </div>
-        <div className="comment-text">
+        <div className="row comment-text">
           <span className="comment">{this.props.comment.comment} </span>
         </div>
       </div>
