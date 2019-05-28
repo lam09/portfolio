@@ -41,15 +41,15 @@ app.post('/sendmail',function(req,res){
   Email.sendMail(req,res);
 });
 
-const sslkey =  fs.readFileSync('./sslkey/key.pem');
-const certificate =  fs.readFileSync('./sslkey/cert.pem');
-const httpsServer = https.createServer({
-  key: sslkey,
-  cert: certificate,
-  passphrase: 'lataa.sk'
-}, app);
+// const sslkey =  fs.readFileSync('./sslkey/key.pem');
+// const certificate =  fs.readFileSync('./sslkey/cert.pem');
+// const httpsServer = https.createServer({
+//   key: sslkey,
+//   cert: certificate,
+//   passphrase: 'lataa.sk'
+// }, app);
 
-httpsServer.listen(port, () => {
+app.listen(port, () => {
 	console.log('HTTPS Server running on port '+port);
 });
 module.exports = app; // for testing
