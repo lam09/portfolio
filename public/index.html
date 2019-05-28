@@ -422,7 +422,7 @@
          $("#myModal").modal("show");
        });*/
       $("#portfolioModal1").on('show.bs.modal', function () {
-        document.getElementById('crystal').src = "https://lataa.sk:3000/game/crystal";
+        document.getElementById('crystal').src = "https://lataa.sk/game/crystal";
       });
       $("#portfolioModal1").on('hide.bs.modal', function () {
         document.getElementById('crystal').src = "about:blank";
@@ -437,7 +437,7 @@
         $.ajax({
           type: "POST",
           // headers: { "Content-Type": "application/json" },
-          url: "https://lataa.sk:12002/sendmail",
+          url: "http://lataa.sk:12002/sendmail",
           data: email,
           success: () => { alert("Thank you for email"); }
         })

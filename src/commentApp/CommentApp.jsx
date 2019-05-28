@@ -19,7 +19,7 @@ class CommentApp extends Component {
     this.setState({ loading: true });
 
     // get all the comments
-    fetch("https://lataa.sk:12002/all")
+    fetch("http://lataa.sk:12002/all")
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -59,7 +59,7 @@ class CommentApp extends Component {
       comment: "",
       comments: commentList
     };
-    fetch("https://lataa.sk:12002/add", {
+    fetch("http://lataa.sk:12002/add", {
       method: "post",
       headers: {
         'Accept': 'application/json',
