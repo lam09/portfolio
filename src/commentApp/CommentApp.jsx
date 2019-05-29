@@ -101,7 +101,7 @@ class CommentApp extends Component {
             Be the first to comment
         </div>
         ) : null}
-        <div className="container comment-box">
+        <div className="row comment-box">
           {this.state.comments.map((comment, index) => (
             <Comment key={index} comment={comment}></Comment>
           ))}
